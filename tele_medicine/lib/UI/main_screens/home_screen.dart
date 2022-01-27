@@ -1,17 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:tele_medicine/UI/Components/widgets/doctor_listtile.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tele_medicine/UI/Components/doctor_details/all_doctors_details_screen.dart';
 import 'package:tele_medicine/UI/Components/widgets/top_doctors_container.dart';
 import 'package:tele_medicine/UI/services_screens/ambulance_screen.dart';
-import 'package:tele_medicine/UI/popular_categories_screens/cardeology_screen2.dart';
-import 'package:tele_medicine/UI/popular_categories_screens/child_specialist_screen.dart';
-import 'package:tele_medicine/UI/popular_categories_screens/eye_specialist_screen.dart';
-import 'package:tele_medicine/UI/popular_categories_screens/medicine_screen.dart';
+import 'package:tele_medicine/UI/popular_categories_screens/doctorslist_screen.dart';
 import 'package:tele_medicine/UI/services_screens/clinicvisit_screen.dart';
+import 'package:tele_medicine/UI/services_screens/profile_screen.dart';
+import 'package:tele_medicine/models/allDoctorsInfo_model.dart';
+import 'package:tele_medicine/models/department_model.dart';
+import 'package:tele_medicine/repositories/allDoctorsInfo_repo.dart';
+import 'package:tele_medicine/repositories/department_repo.dart';
 import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List<AllDoctorsInfo> allDoc=[];
+  @override
+  void initState() {
+    super.initState();
+    AllDoctorsInfoRepo.getAllDoctorsInfo().then((value) {
+      setState(() {
+        allDoc.addAll(value);
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,23 +39,47 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 4,),
+              ///Babylon logo & About Me Profile
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    width: 200,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage("assets/images/babylon.png")),
-                      color: Colors.white60,
-                      borderRadius: BorderRadius.circular(6.0),
+                  GestureDetector(
+                    onTap: () {
+                      UrlLauncher.launch('https://brlbd.com/');
+                    },
+                    child: Container(
+                      width: 200,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(image: AssetImage("assets/images/babylon.png")),
+                        color: Colors.white60,
+                        borderRadius: BorderRadius.circular(6.0),
 
+                      ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                      backgroundColor: Colors.orange,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage(),));
+                      },
+                      child: Container(
+                        height: 50,
+                        width: 50,
+
+                        decoration: BoxDecoration(
+                          color: Colors.cyan,
+                            borderRadius: BorderRadius.circular(112),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: CircleAvatar(
+                            backgroundColor: Colors.white,
+                            backgroundImage: NetworkImage('https://avatars.githubusercontent.com/u/85394911?v=4'),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -48,10 +90,13 @@ class HomePage extends StatelessWidget {
                   children: [
                     TopArea(),
                     SizedBox(height: 10,),
+
+                    ///HOW CAN WE HELP YOU & SERVICES AREA
                     Container(
                       height: 180,
                       child: Column(
                         children: [
+                          /// HOW CAN WE HELP YOU
                           Row(
                             children: [
                               Padding(
@@ -60,25 +105,32 @@ class HomePage extends StatelessWidget {
                               ),
                             ],
                           ),
+                          ///SERVICES: CLINIC VISIT, HELPLINE, AMBULANCE
                           Services(),
                         ],
                       ),
                     ),
+
                     PopularCategories(),
                     TopDoctors(),
                     Row(
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(10.0),
-                          child: Text("Recomended For You",style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold)),
+                          child: Text("Recomended For You",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold)),
                         ),
                       ],
                     ),
-                    DoctorInfoContainer(),
-                    DoctorInfoContainer(),
-                    DoctorInfoContainer(),
-                    DoctorInfoContainer(),
-                    DoctorInfoContainer(),
+                    Container(
+                      child: ListView.builder(
+                        itemCount: allDoc.length,
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index) {
+                        return AllDoctorsInfoContainer(dectors: allDoc.elementAt(index),) ;
+                      },),
+                    ),
+
                     SizedBox(height: 60,)
                   ],
                 ),
@@ -266,7 +318,7 @@ class Services extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.medical_services,size: 40,color: Colors.red,),
+                    Icon(FontAwesomeIcons.ambulance,size: 40,color: Colors.red,),
                     SizedBox(height: 2,),
                     Text("Ambulance",style: TextStyle(fontWeight: FontWeight.bold)),
                   ],
@@ -283,9 +335,27 @@ class Services extends StatelessWidget {
 
 
 
-class PopularCategories extends StatelessWidget {
+class PopularCategories extends StatefulWidget {
   const PopularCategories({Key? key}) : super(key: key);
 
+  @override
+  State<PopularCategories> createState() => _PopularCategoriesState();
+}
+
+class _PopularCategoriesState extends State<PopularCategories> {
+  List<Department> depList=[];
+  @override
+  void initState() {
+    super.initState();
+    DepartmentRepo.getDepartmentList().then((value) {
+      setState(() {
+
+        depList.addAll(value);
+
+      });
+    });
+
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -310,163 +380,76 @@ class PopularCategories extends StatelessWidget {
             ),
 
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GridView.count(
-                scrollDirection: Axis.horizontal,
-                crossAxisSpacing: 12.0,
-                mainAxisSpacing: 12.0,
-                crossAxisCount: 2,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => CardeologyPage(),));
-                    },
-                    child: Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.favorite,size: 40,color: Colors.redAccent,),
-                          SizedBox(height: 2,),
-                          Text("Cardeology",style: TextStyle(fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.4),
-                            spreadRadius: 1,
-                            blurRadius: 2,
-                            offset: Offset(0, 3), // changes position of shadow
+                  padding: const EdgeInsets.all(8.0),
+                  child: GridView.count(
+                    scrollDirection: Axis.horizontal,
+                    crossAxisSpacing: 12.0,
+                    mainAxisSpacing: 12.0,
+                    crossAxisCount: 2,
+                    children: depList.map((deps){
+                      return GestureDetector(
+                        onTap: () {
+                          _navigatePage(index: deps.id!);
+                        },
+                        child: Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              _customIcon(id: deps.id!),
+                              SizedBox(height: 2,),
+                              Text("${deps.name??""}",style: TextStyle(fontWeight: FontWeight.bold)),
+                            ],
                           ),
-                        ],
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.4),
+                                spreadRadius: 1,
+                                blurRadius: 2,
+                                offset: Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
 
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Eye_SpecialistPage(),));
-                    },
-                    child: Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.remove_red_eye,size: 40,color: Colors.black,),
-                          SizedBox(height: 2,),
-                          Text("Eye Specialist",style: TextStyle(fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.4),
-                            spreadRadius: 1,
-                            blurRadius: 2,
-                            offset: Offset(0, 3), // changes position of shadow
                           ),
-                        ],
-
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MedicinePage(),));
-                    },
-                    child: Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.medication,size: 40,color: Colors.orange,),
-                          SizedBox(height: 2,),
-                          Text("Medicine",style: TextStyle(fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.4),
-                            spreadRadius: 1,
-                            blurRadius: 2,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                        ],
-
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Child_SpecialistPage(),));
-                    },
-                    child: Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.child_care,size: 40,color: Colors.brown,),
-                          SizedBox(height: 2,),
-                          Text("Child Specialist",style: TextStyle(fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.4),
-                            spreadRadius: 1,
-                            blurRadius: 2,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                        ],
-
-                      ),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.4),
-                          spreadRadius: 1,
-                          blurRadius: 2,
-                          offset: Offset(0, 3), // changes position of shadow
                         ),
-                      ],
-
-                    ),
+                      );
+                    }).toList(),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.4),
-                          spreadRadius: 1,
-                          blurRadius: 2,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-
-                    ),
-                  ),
-                ],
-              ),
-            ),
+                ),
           )
         ],
       ),
     );
   }
+  Widget _customIcon({required int id}){
+    IconData? iconData;
+    if(id==2){
+      iconData=Icons.medication;
+    }else if(id==1){
+      iconData=FontAwesomeIcons.heartbeat;
+    } else if(id==3){
+      iconData=FontAwesomeIcons.eye;
+    }else{
+      iconData=FontAwesomeIcons.baby;
+    }
+    return Icon(iconData,size: 38,color: Colors.black,);
+  }
+ void  _navigatePage({required int index}){
+    if(index==1){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorsPage(deptList: depList.elementAt(0),),));
+    }else if(index==2){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorsPage(deptList: depList.elementAt(1),),));
+    } else if(index==3){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorsPage(deptList: depList.elementAt(2),),));
+    }else if(index==4){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorsPage(deptList: depList.elementAt(3),),));
+    }
+
+  }
+
+
 }
 
 class TopDoctors extends StatelessWidget {
@@ -486,22 +469,98 @@ class TopDoctors extends StatelessWidget {
               ),
             ],
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                TopDoctorsContainer(),
-                TopDoctorsContainer(),
-                TopDoctorsContainer(),
-                TopDoctorsContainer(),
-                TopDoctorsContainer(),
-              ],
-            ),
-          ),
+          Container(
+              height: 180,
+              child: TopDoctorsContainer()),
         ],
       ),
     );
   }
 }
 
+class AllDoctorsInfoContainer extends StatelessWidget {
+
+  final AllDoctorsInfo dectors;
+  AllDoctorsInfoContainer({Key? key,required this.dectors}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+
+    return  Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => AllDoctorDetailsPage(all_doctor: dectors,),));
+        },
+        child: Container(
+          height: 120,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.cyan,
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 100,
+                  width: 100,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(image: NetworkImage("${dectors.image}"),
+                      fit: BoxFit.cover,
+                    ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 20,
+                      width: 220,
+
+                      child: Text("${dectors.name}",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white)),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: Container(
+                          height: 18,
+                          width: 200,
+                          child: Text("${dectors.department}",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black87))),
+                    ),
+
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 3,vertical: 3),
+                      height: 60,
+                      width: 200,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(.6),
+                        borderRadius: BorderRadius.circular(6.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.4),
+                            spreadRadius: 1,
+                            blurRadius: 2,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
+
+                      ),
+                      child: Text("${dectors.degree}",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500)),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

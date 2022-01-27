@@ -1,16 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:tele_medicine/UI/Components/doctor_details_screen.dart';
+import 'package:tele_medicine/UI/Components/doctor_details/doctor_details_screen.dart';
+import 'package:tele_medicine/models/department_model.dart';
 
-class DoctorInfoContainer extends StatelessWidget {
-  const DoctorInfoContainer({Key? key}) : super(key: key);
+class DoctorsPage extends StatelessWidget {
+  final Department deptList;
+  const DoctorsPage({Key? key,required this.deptList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    print(deptList.name);
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
+        title: Text("${deptList.name}",style: TextStyle(color: Colors.black,fontSize: 24,fontWeight: FontWeight.w800),),
+        centerTitle: true,
+      ),
+      body:
+        ListView.builder(
+          itemCount: deptList.doctorList!.length,
+          itemBuilder: (context, index) {
+          return  DoctorInfoContainer2(dectors: deptList.doctorList!.elementAt(index));
+        },)
+
+    );
+  }
+}
+
+
+
+class DoctorInfoContainer2 extends StatelessWidget {
+
+  final DoctorList dectors;
+  DoctorInfoContainer2({Key? key,required this.dectors}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+
+    return  Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDetailsPage(),));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDetailsPage(doctor: dectors,),));
         },
         child: Container(
           height: 120,
@@ -27,7 +58,7 @@ class DoctorInfoContainer extends StatelessWidget {
                   height: 100,
                   width: 100,
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: NetworkImage("https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg"),
+                    image: DecorationImage(image: NetworkImage("${dectors.image}"),
                       fit: BoxFit.cover,
                     ),
                     color: Colors.white,
@@ -44,15 +75,15 @@ class DoctorInfoContainer extends StatelessWidget {
                       height: 20,
                       width: 220,
 
-                      child: Text("Dr. Muhammad Saifuddin",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white)),
+                      child: Text("${dectors.name}",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white)),
                     ),
 
                     Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: Container(
-                        height: 18,
+                          height: 18,
                           width: 200,
-                          child: Text("Medicine",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black87))),
+                          child: Text("${dectors.department}",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black87))),
                     ),
 
                     Container(
@@ -72,7 +103,7 @@ class DoctorInfoContainer extends StatelessWidget {
                         ],
 
                       ),
-                      child: Text("MBBS(DMC), D-Card(Austria), MCPS(MED)",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500)),
+                      child: Text("${dectors.degree}",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500)),
                     ),
                   ],
                 ),

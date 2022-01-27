@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:tele_medicine/UI/main_screens/chat_screen.dart';
 import 'package:tele_medicine/UI/services_screens/clinicvisit_screen.dart';
 import 'package:share/share.dart';
+import 'package:tele_medicine/models/topDoctors_model.dart';
 
-class DoctorDetailsPage extends StatelessWidget {
-  const DoctorDetailsPage({Key? key}) : super(key: key);
+
+class TopDoctorDetailsPage extends StatelessWidget {
+  final TopDoctor top_doctor;
+  const TopDoctorDetailsPage({Key? key,required this.top_doctor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +18,9 @@ class DoctorDetailsPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: GestureDetector(
-              onTap: () {
-                Share.share(" https://play.google.com/store/apps/details?id=com.example.tele_medicine");
-              },
+                onTap: () {
+                  Share.share(" https://play.google.com/store/apps/details?id=com.example.tele_medicine");
+                },
                 child: Icon(Icons.share,size: 30,)),
           ),
         ],
@@ -63,24 +66,26 @@ class DoctorDetailsPage extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: CircleAvatar(
-                              backgroundImage: NetworkImage('https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg'),
+                              backgroundImage: NetworkImage('${top_doctor.image}'),
                             ),
                           ),
                         ),
 
                         SizedBox(width: 10.0,),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Prof. Dr. Monir Hossain",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white),),
-                            SizedBox(height: 5,),
-                            Container(
-                              height: 60,
-                              width: 200,
-                                child: Text("MBBS (DMC), D-Card(Austria), MCPS(MED)",style: TextStyle(fontWeight: FontWeight.w600,color: Colors.white38))),
-                            Text("Medicine",style: TextStyle(fontWeight: FontWeight.w600,color: Colors.white))
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("${top_doctor.name}",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white),),
+                              SizedBox(height: 5,),
+                              Container(
+                                  height: 60,
+                                  width: 200,
+                                  child: Text("${top_doctor.degree}",style: TextStyle(fontWeight: FontWeight.w600,color: Colors.white38))),
+                              Text("${top_doctor.department}",style: TextStyle(fontWeight: FontWeight.w600,color: Colors.white))
 
-                          ],
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -96,7 +101,7 @@ class DoctorDetailsPage extends StatelessWidget {
                       Text("Description",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black)),
                       SizedBox(height: 10,),
                       Container(
-                        height: 250,
+                        height: 220,
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -161,7 +166,7 @@ class DoctorDetailsPage extends StatelessWidget {
                                 children: [
                                   Text("Experience",style: TextStyle(fontSize: 14,color: Colors.grey,fontWeight: FontWeight.bold),),
                                   SizedBox(height: 2,),
-                                  Text("12 YEARS",
+                                  Text("${top_doctor.experience} YEARS",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16,
@@ -185,7 +190,7 @@ class DoctorDetailsPage extends StatelessWidget {
                                 children: [
                                   Text("BMDC Number",style: TextStyle(fontSize: 14,color: Colors.grey,fontWeight: FontWeight.bold),),
                                   SizedBox(height: 2,),
-                                  Text("6524",
+                                  Text("${top_doctor.bmdc}",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16,
@@ -206,12 +211,12 @@ class DoctorDetailsPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text("Working in",style: TextStyle(fontWeight: FontWeight.w600,color: Colors.black54),),
-                            Text("Bangladesh Medical Hospital And College",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
+                            Text("${top_doctor.institue}",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
                           ],
                         ),
                       ),
                     ),
-                      SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                     Container(
@@ -219,16 +224,16 @@ class DoctorDetailsPage extends StatelessWidget {
                       width: double.infinity,
                       color: Colors.grey.withOpacity(0.5),
                     ),
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text("Consultation Fee :",style: TextStyle(fontSize: 18,color: Colors.grey,fontWeight: FontWeight.bold)),
-                            Text(" ৳400",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.blue)),
-                          ],
-                        ),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text("Consultation Fee :",style: TextStyle(fontSize: 18,color: Colors.grey,fontWeight: FontWeight.bold)),
+                          Padding(
+                            padding: const EdgeInsets.all(2.0),
+                            child: Text(" ৳${top_doctor.fee}",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.blue)),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -236,7 +241,7 @@ class DoctorDetailsPage extends StatelessWidget {
               )),
 
           Positioned(
-               top: 180,
+              top: 180,
               left: 10,
               child: FloatingActionButton(
                 child: Icon(Icons.chat),
@@ -258,7 +263,7 @@ class DoctorDetailsPage extends StatelessWidget {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => ClinicVisitPage(),));
                       },
                       child: Container(
-                        height: 60,
+                        height: 66,
                         color: Colors.cyan,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -282,7 +287,7 @@ class DoctorDetailsPage extends StatelessWidget {
                         ),);
                       },
                       child: Container(
-                        height: 60,
+                        height: 66,
                         color: Color(0XFF00B686),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,

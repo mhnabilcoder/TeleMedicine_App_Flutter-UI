@@ -1,0 +1,501 @@
+[
+  {
+    "id": 41,
+    "department": "dental",
+    "image": "https://www.uhlbd.com/backend/web/product_uploads/1571056996_2_Spina%20Luna%20Biswas.jpg",
+    "name": "Prof.Dr.Shamima Akkter",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "7425",
+    "experience": "6.5",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "200"
+  },
+  {
+    "id": 42,
+    "department": "pathology",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnV6CCXwQGiugU9VeKtZ128lgpIqKrePPU1A&usqp=CAU",
+    "name": "Prof.Dr.Shamima Akkter",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "7425",
+    "experience": "6.5",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "200"
+  },
+  {
+    "id": 43,
+    "department": "dental",
+    "image": "https://www.uhlbd.com/backend/web/product_uploads/1571056996_2_Spina%20Luna%20Biswas.jpg",
+    "name": "Prof.Dr.Shamima Akkter",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "7425",
+    "experience": "6.5",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "200"
+  },
+  {
+    "id": 44,
+    "department": "psycology",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDmcm6vbi9ZNOS2A-u9G7W2-KbuKEzhhGtsnNo1cbWMaYR2XcmSJlki3eKbMohSLMdGis&usqp=CAU",
+    "name": "Prof.Dr.Shamima Akkter",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "7425",
+    "experience": "6.5",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "200"
+  },
+  {
+    "id": 1,
+    "department": "medicine",
+    "image": "https://www.bdspecializedhospital.com/storage/app/public/media/1557730926.jpg",
+    "name": "Prof.Dr.Munir Hossain",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "1524",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "500"
+  },
+  {
+    "id": 2,
+    "department": "medicine",
+    "image": "https://www.bdspecializedhospital.com/storage/app/public/media/1557719215.jpg",
+    "name": "Prof.Dr.Amir Hossain",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "2425",
+    "experience": "10",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "450"
+  },
+
+  {
+    "id": 13,
+    "department": "cardeology",
+    "image": "https://www.primehospitalltd.com/images/doctors/2019/03/07/570070319035357.jpg",
+    "name": "Dr.Mohhammad Mizan",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "1324",
+    "experience": "8.5",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+
+  {
+    "id": 3,
+    "department": "medicine",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRa7QLdOMwnDcp7AJEjDMPPAdlEDTVmKJ1V7YBqkfT_FuZF5NTPQFInn0zRxCQoKaM6D4&usqp=CAU",
+    "name": "Prof.Dr.Mohhammad Saifuddin",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "3524",
+    "experience": "9",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 4,
+    "department": "medicine",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGwNrNqIWL0bq-RPWVhex5ny00bPrcAI10gJ0_TG5vLsW8-eCcLD-J8AEfZ6woiOcJA30&usqp=CAU",
+    "name": "Prof.Dr.MD. Romizuddin",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "4524",
+    "experience": "8.5",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "350"
+  },
+
+  {
+    "id": 7,
+    "department": "medicine",
+    "image": "https://emch.com.bd/wp-content/uploads/2021/06/Dr.-Monir-Us-Saleheen-768x768.jpg",
+    "name": "Prof.Dr.Mir Alam",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "7425",
+    "experience": "6.5",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "200"
+  },
+
+  {
+    "id": 5,
+    "department": "medicine",
+    "image": "https://doctoryouneed.org/wp-content/uploads/2019/10/Prof.-Dr.-Farhana-Dewan.jpg",
+    "name": "Prof.Dr.Fouzia Akter",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "5524",
+    "experience": "8",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "300"
+  },
+  {
+    "id": 6,
+    "department": "medicine",
+    "image": "https://www.bdspecializedhospital.com/storage/app/public/media/1557730926.jpg",
+    "name": "Dr.Kamal Hossain",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "6524",
+    "experience": "7",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "250"
+  },
+
+  {
+    "id": 15,
+    "department": "cardeology",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD1SW18bWyJMJXyhNShdkyUqB-Mdjhwypa1qWvEhZCawz8KCnnTMBem7pZ5OBGgkjZvv8&usqp=CAU",
+    "name": "Dr.Kamal Hossain",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "1524",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+
+  {
+    "id": 8,
+    "department": "medicine",
+    "image": "https://www.primehospitalltd.com/images/doctors/2019/03/07/570070319035357.jpg",
+    "name": "Dr.Mohhammad Mizan",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "8524",
+    "experience": "5",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "150"
+  },
+  {
+    "id": 9,
+    "department": "medicine",
+    "image": "https://emch.com.bd/wp-content/uploads/2021/06/faru.jpeg",
+    "name": "Dr.Khalid Farhan",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "9524",
+    "experience": "3.5",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "100"
+  },
+
+
+
+  {
+    "id": 10,
+    "department": "medicine",
+    "image": "https://yt3.ggpht.com/-C_shRC-d10dt-yU9dnF6g1FQ-IuX4tcshAbulFE4KhtxLSMSY_4dsx9hgKqa7Ly-3KF9vWOBQ=s900-c-k-c0x00ffffff-no-rj",
+    "name": "Dr.Enayed Chowdhury",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "1024",
+    "experience": "2",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "50"
+  },
+  {
+    "id": 11,
+    "department": "cardeology",
+    "image": "https://yt3.ggpht.com/-C_shRC-d10dt-yU9dnF6g1FQ-IuX4tcshAbulFE4KhtxLSMSY_4dsx9hgKqa7Ly-3KF9vWOBQ=s900-c-k-c0x00ffffff-no-rj",
+    "name": "Dr.Enayed Chowdhury",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "1124",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "500"
+  },
+
+
+
+  {
+    "id": 12,
+    "department": "cardeology",
+    "image": "https://emch.com.bd/wp-content/uploads/2021/06/faru.jpeg",
+    "name": "Dr.Khalid Farhan",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "1225",
+    "experience": "10",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "450"
+  },
+  {
+    "id": 14,
+    "department": "cardeology",
+    "image": "https://emch.com.bd/wp-content/uploads/2021/06/Dr.-Monir-Us-Saleheen-768x768.jpg",
+    "name": "Prof.Dr.Mir Alam",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "1424",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+
+  
+  {
+    "id": 16,
+    "department": "cardeology",
+    "image": "https://www.bdspecializedhospital.com/storage/app/public/media/1557730926.jpg",
+    "name": "Prof.Dr.Munir Hossain",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "1624",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 17,
+    "department": "cardeology",
+    "image": "https://www.bdspecializedhospital.com/storage/app/public/media/1557719215.jpg",
+    "name": "Prof.Dr.Amir Hossain",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "1725",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "340"
+  },
+
+  {
+    "id": 18,
+    "department": "cardeology",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRa7QLdOMwnDcp7AJEjDMPPAdlEDTVmKJ1V7YBqkfT_FuZF5NTPQFInn0zRxCQoKaM6D4&usqp=CAU",
+    "name": "Prof.Dr.Mohhammad Saifuddin",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "1824",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 19,
+    "department": "cardeology",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGwNrNqIWL0bq-RPWVhex5ny00bPrcAI10gJ0_TG5vLsW8-eCcLD-J8AEfZ6woiOcJA30&usqp=CAU",
+    "name": "Prof.Dr.Mohhammad Romizuddin",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "1924",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 20,
+    "department": "cardeology",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_CWwGaPqFHeDr36h69ASD5d8dVD2lXDu8lpyy0LWsZZT_bVfldBE64q1Y6CDv9JzBDuM&usqp=CAU",
+    "name": "Prof.Dr.Mohhammad Romizuddin",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "2024",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 21,
+    "department": "eye specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE8-hgYlmnnTd2D5MdZMPbV28XNtLSM5nRdj_s_I-_gtuRda9OWIURAWTtiDkzQXbxGic&usqp=CAU",
+    "name": "Dr.Kamal R khan",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "2124",
+    "experience": "7",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "500"
+  },
+  {
+    "id": 22,
+    "department": "eye specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSsBAG_sUid_kBaxMJcVh1OD_x5wMvRoAsPvsvo7mWIASc3TYyJvo3frhk5G9G_wwdSfg&usqp=CAU",
+    "name": "Prof.Dr.Jafor Ali",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "2225",
+    "experience": "6.5",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "200"
+  },
+  {
+    "id": 23,
+    "department": "eye specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3X6wVOurAJYaXhYj1Es0gYh5ozX0RnR10jAomm7rtsDTqbEB1Dnd55AToLVosIFWcIg8&usqp=CAU",
+    "name": "Dr.Mizanur Rahman",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "2324",
+    "experience": "5",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "150"
+  },
+  {
+    "id": 24,
+    "department": "eye specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcZr6P-0w2VCA7hDBFPj0b0sdV6Lfg5D3RI1yvu0i9nTQra8cbtswuesw1Y16H7dyLrmo&usqp=CAU",
+    "name": "Prof.Dr.Sehnaz Khandakar",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "2424",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 25,
+    "department": "eye specialist",
+    "image": "http://delta-hospital.com/wp-content/uploads/2018/02/Dr.-Tannima-Adhikary.jpg",
+    "name": "Prof.Dr.Ayesha Siddik",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "6524",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 26,
+    "department": "eye specialist",
+    "image": "https://emch.com.bd/wp-content/uploads/2021/06/Dr.-Monir-Us-Saleheen-768x768.jpg",
+    "name": "Prof.Dr.Munir Hossain",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "2624",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 27,
+    "department": "eye specialist",
+    "image": "https://doctoryouneed.org/wp-content/uploads/2020/01/1557732626.jpg",
+    "name": "Prof.Dr.Hossain",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "2725",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "340"
+  },
+  {
+    "id": 28,
+    "department": "eye specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0EpnC5I5j-AG20XDg9BZCKPwZJdDN7sbr7gTGaFwJ_QovqGUWNh0T6oqpgFEJSepl6-0&usqp=CAU",
+    "name": "Prof.Dr.Saiful islam",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "6524",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 29,
+    "department": "eye specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPI-QsAF157v8vZQaRn-dEfIN3QyYZdacfwQ&usqp=CAU",
+    "name": "Prof.Dr.Mohhammad Romizuddin",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "2924",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 30,
+    "department": "eye specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRa7QLdOMwnDcp7AJEjDMPPAdlEDTVmKJ1V7YBqkfT_FuZF5NTPQFInn0zRxCQoKaM6D4&usqp=CAU",
+    "name": "Prof.Dr.Mohhammad Romizuddin",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "3024",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 31,
+    "department": "child specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRa7QLdOMwnDcp7AJEjDMPPAdlEDTVmKJ1V7YBqkfT_FuZF5NTPQFInn0zRxCQoKaM6D4&usqp=CAU",
+    "name": "Prof.Dr.Saiful Islam",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "3124",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 32,
+    "department": "child specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPI-QsAF157v8vZQaRn-dEfIN3QyYZdacfwQ&usqp=CAU",
+    "name": "Prof.Dr.Amir Raihan",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "3225",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "340"
+  },
+  {
+    "id": 33,
+    "department": "child specialist",
+    "image": "https://doctoryouneed.org/wp-content/uploads/2019/10/Prof.-Dr.-Farhana-Dewan.jpg",
+    "name": "Prof.Dr.Khaleda Begum",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "3324",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 34,
+    "department": "child specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0EpnC5I5j-AG20XDg9BZCKPwZJdDN7sbr7gTGaFwJ_QovqGUWNh0T6oqpgFEJSepl6-0&usqp=CAU",
+    "name": "Prof.Dr.Momin",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "3424",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 35,
+    "department": "child specialist",
+    "image": "https://emch.com.bd/wp-content/uploads/2021/06/Dr.-Monir-Us-Saleheen-768x768.jpg",
+    "name": "Prof.Dr.Hasibur Rahman",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "3524",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 36,
+    "department": "child specialist",
+    "image": "https://www.bdspecializedhospital.com/storage/app/public/media/1557730926.jpg",
+    "name": "Prof.Dr.Munir Hossain",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "3624",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 37,
+    "department": "child specialist",
+    "image": "https://www.bdspecializedhospital.com/storage/app/public/media/1557719215.jpg",
+    "name": "Prof.Dr.Amir Hossain",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "3725",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "340"
+  },
+  {
+    "id": 38,
+    "department": "child specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6j3R-n93ivRYfBUj1VkIBCJFu_zua0jrkggPq5wYsOsBdE2QULIQQHUHluCoWCLpeffg&usqp=CAU",
+    "name": "Prof.Dr.Mohhammad Saifuddin",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "3824",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 39,
+    "department": "child specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3X6wVOurAJYaXhYj1Es0gYh5ozX0RnR10jAomm7rtsDTqbEB1Dnd55AToLVosIFWcIg8&usqp=CAU",
+    "name": "Prof.Dr.Mohhammad Rumi",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "3924",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  },
+  {
+    "id": 40,
+    "department": "child specialist",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSsBAG_sUid_kBaxMJcVh1OD_x5wMvRoAsPvsvo7mWIASc3TYyJvo3frhk5G9G_wwdSfg&usqp=CAU",
+    "name": "Prof.Dr.Mohhammad Romizuddin",
+    "degree": "MBBS (DMC), D-Card(Austria), MCPS(MED)",
+    "bmdc": "4024",
+    "experience": "12",
+    "institue": "Bangladesh Medical Hospital And College",
+    "fee": "400"
+  }
+]
