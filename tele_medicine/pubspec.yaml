@@ -57,9 +57,9 @@ flutter_native_splash:
   android: true
   ios: true
   #web: false
-  color: "#FFFFFF"
-  #background_image: "assets/images/book_my_bus.png"
-  image: assets/icons/ic_launcher.png
+  #color: "#FFFFFF"
+  background_image: "assets/images/background.png"
+  #image: assets/icons/ic_launcher.png
   #background_image_dark: "assets/dark-background.png"
   #image_dark: assets/images/babylon.png
   color_dark: "#FFFFFF"

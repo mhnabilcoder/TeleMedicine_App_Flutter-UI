@@ -63,9 +63,9 @@ class ProfilePage extends StatelessWidget {
                             width: MediaQuery.of(context).size.width,
                             color: Colors.black12,
                             child: Text(
-                              "Hi, I’m Nabil, and I am a Flutter Developer . I’m interested in coding,App Development and Data Science. I’m currently learning Cross Platform Application "
+                              "Hi, I’m Nabil, I am a Flutter Developer . I’m interested in coding,App Development and Data Science. I’m currently learning Cross Platform Application "
                                   "Development Using Flutter. "
-                               " I have a bit experience is web design and development, Django, Tkinter for UI design. "
+                               " I have a bit experience in web design and development, Django, Tkinter for UI design. "
                                   "I also have interest in Marketing Field. And am a fast learner.",
                               style: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.w400),),
                           ),
