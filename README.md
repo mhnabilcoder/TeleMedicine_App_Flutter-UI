@@ -1,6 +1,5 @@
 # TeliMed
 Healthcare anyware anytime
- an online medical service app where people can consult and take appoitment with doctors
 
 ## Features
 
@@ -19,7 +18,7 @@ Healthcare anyware anytime
 
 ## Try out ShikkhaDex?
 
-Android: [Download ShikkhaDex.apk](https://github.com/afjal-al-sayed/shikkha_dex/raw/master/release/shikkha_dex.apk)
+Android: [Download TeliMed.apk](https://github.com/afjal-al-sayed/shikkha_dex/raw/master/release/shikkha_dex.apk)
 
 ## Developer
 
