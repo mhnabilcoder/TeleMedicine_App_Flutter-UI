@@ -49,7 +49,7 @@ class ProfilePage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
-                    height: 270,
+                    height: 272,
                     width: MediaQuery.of(context).size.width,
                     color: Colors.cyan,
                     child: Column(

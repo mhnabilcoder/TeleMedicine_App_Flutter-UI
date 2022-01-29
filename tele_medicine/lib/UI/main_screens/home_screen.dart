@@ -7,6 +7,7 @@ import 'package:tele_medicine/UI/popular_categories_screens/doctorslist_screen.d
 import 'package:tele_medicine/UI/services_screens/clinicvisit_screen.dart';
 import 'package:tele_medicine/UI/services_screens/profile_screen.dart';
 import 'package:tele_medicine/UI/services_screens/web_page.dart';
+import 'package:tele_medicine/core/helpers.dart';
 import 'package:tele_medicine/models/allDoctorsInfo_model.dart';
 import 'package:tele_medicine/models/department_model.dart';
 import 'package:tele_medicine/repositories/allDoctorsInfo_repo.dart';
@@ -29,6 +30,11 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         allDoc.addAll(value);
       });
+    });
+    Helpers.initConnectivity().then((value){
+      if(!value){
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("No internet connection")));
+      }
     });
   }
   @override
@@ -77,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.all(3.0),
                           child: CircleAvatar(
                             backgroundColor: Colors.white,
-                            backgroundImage: NetworkImage('https://avatars.githubusercontent.com/u/85394911?v=4'),
+                            backgroundImage: AssetImage('assets/images/profile.jpeg'),
                           ),
                         ),
                       ),

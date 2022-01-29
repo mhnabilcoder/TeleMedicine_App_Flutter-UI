@@ -39,6 +39,8 @@ dependencies:
   blur: ^3.0.0
   font_awesome_flutter: ^9.2.0
   webview_flutter: ^3.0.0
+  connectivity_plus: ^2.2.0
+
 
 dev_dependencies:
   flutter_test:
@@ -59,13 +61,14 @@ flutter_native_splash:
   #web: false
   #color: "#FFFFFF"
   background_image: "assets/images/background.png"
+
   #image: assets/icons/ic_launcher.png
   #background_image_dark: "assets/dark-background.png"
   #image_dark: assets/images/babylon.png
   color_dark: "#FFFFFF"
   #ios_content_mode: center
   #android_gravity: center
-  #fullscreen: true
+  fullscreen: true
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -89,6 +92,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/background.png
     - assets/json/doctors_info.json
     - assets/json/top_doctors.json
     - assets/json/all_doctors_info.json
