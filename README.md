@@ -16,9 +16,9 @@ Healthcare anyware anytime
 <img src="Screenshots/Splash_Screen.jpeg" width="256"> <img src="Screenshots/Home_Screen_01.jpeg" width="256"> <img src="Screenshots/Home_Screen_02.jpeg" width="256"> <img src="Screenshots/Ambulance_Screen.jpeg" width="256"> <img src="Screenshots/Doctors_List_By_Department.jpeg" width="256"> <img src="Screenshots/Doctors_Profile.jpeg" width="256"><img src="Screenshots/About_ME.jpeg" width="256"> 
 
 
-## Try out ShikkhaDex?
+## Try out TeliMed?
 
-Android: [Download TeliMed.apk](https://github.com/afjal-al-sayed/shikkha_dex/raw/master/release/shikkha_dex.apk)
+Android: [Download TeliMed.apk](https://github.com/mhnabilcoder/TeleMedicine_App_Flutter-UI/blob/main/App/TeliMed.apk)
 
 ## Developer
 
