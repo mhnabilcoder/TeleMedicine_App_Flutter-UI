@@ -65,7 +65,7 @@ flutter_native_splash:
   #image: assets/icons/ic_launcher.png
   #background_image_dark: "assets/dark-background.png"
   #image_dark: assets/images/babylon.png
-  color_dark: "#FFFFFF"
+#  color_dark: "#FFFFFF"
   #ios_content_mode: center
   #android_gravity: center
   fullscreen: true
